@@ -59,6 +59,18 @@ Resultados obtenidos al preparar la demo (Lighthouse 12, Chrome headless, localh
 
 **Escritorio**: 74 → 92 → 95 → 97 → 100 → 100 → 100.
 
+**Qué significa cada columna**
+
+| Columna | Qué mide | Bueno |
+|---|---|---|
+| Nota | Puntuación de rendimiento de Lighthouse (0–100), ponderando FCP, LCP, TBT y CLS | ≥ 90 |
+| FCP (First Contentful Paint) | Cuándo aparece el primer texto o imagen: el usuario deja de ver la pantalla en blanco | ≤ 1,8 s |
+| LCP (Largest Contentful Paint) | Cuándo se pinta el elemento más grande de la pantalla (aquí, el hero): la página "parece cargada" | ≤ 2,5 s |
+| TBT (Total Blocking Time) | Tiempo total que el hilo principal estuvo bloqueado por tareas largas entre FCP y la interactividad: la página se ve pero no responde | ≤ 200 ms |
+| CLS (Cumulative Layout Shift) | Cuánto "salta" el contenido mientras carga (sin unidades): evita pulsar donde ya no está el botón | ≤ 0,1 |
+| Peticiones | Número de peticiones de red al cargar la página | cuantas menos, mejor |
+| Transferido | Bytes descargados por la red (ya comprimidos) | cuantos menos, mejor |
+
 > Los números de laboratorio cambian un poco entre ejecuciones y máquinas.
 > En localhost el TTFB es casi 0, así que en producción todo será algo más lento.
 
