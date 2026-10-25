@@ -94,6 +94,11 @@ Resultados obtenidos al preparar la demo (Lighthouse 12, Chrome headless, localh
    columna *Content-Encoding*. Bajar hasta la gráfica: Chart.js pasa de 200 KB a 59 KB.
    **Recargar sin "Disable cache"**: en `:8004` todo se revalida (304), en `:8005` los
    assets salen de *disk/memory cache* sin tocar la red.
+   ⚠️ **Mencionar en el vídeo**: el `no-cache` de 00–04 lo pone el `Caddyfile` a propósito
+   para que la demo sea repetible; **no es el comportamiento por defecto**. Un servidor
+   sin `Cache-Control` (solo `ETag`/`Last-Modified`) hace que el navegador *adivine*
+   (frescura heurística: ~10 % del tiempo desde `Last-Modified`) y reutilice los ficheros
+   sin preguntar, sin 304 y sin control sobre cuándo se actualizan.
 7. **Bonus (06)**: `:8006/?vitals` con el panel de LCP/INP/CLS. Ejecutar
    `./scripts/medir.sh` y enseñar la tabla de antes/después. Mencionar PageSpeed
    Insights para medir la web real (datos de campo de usuarios reales, CrUX).
