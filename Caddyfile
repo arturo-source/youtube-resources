@@ -1,0 +1,51 @@
+# Sirve todos los pasos a la vez, cada uno en su puerto:
+#   caddy run            (desde la raíz del proyecto)
+#
+#   http://localhost:8000  → 00 inicial
+#   http://localhost:8001  → 01 lazy loading y code splitting
+#   http://localhost:8002  → 02 optimización de imágenes
+#   http://localhost:8003  → 03 evitar bloquear el renderizado
+#   http://localhost:8004  → 04 reducir peticiones de red
+#   http://localhost:8005  → 05 compresión y caché   (requiere `node build.mjs`)
+#   http://localhost:8006  → 06 bonus: medición       (requiere `node build.mjs`)
+#
+# Los pasos 00–04 usan un file_server "de serie": sin compresión y sin
+# Cache-Control (solo ETag/Last-Modified), como muchos servidores por defecto.
+{
+	admin off
+}
+
+:8000 {
+	root * 00-inicial
+	file_server
+}
+
+:8001 {
+	root * 01-lazy-loading-code-splitting
+	file_server
+}
+
+:8002 {
+	root * 02-optimizacion-imagenes
+	file_server
+}
+
+:8003 {
+	root * 03-evitar-bloqueo-render
+	file_server
+}
+
+:8004 {
+	root * 04-reducir-peticiones
+	file_server
+}
+
+:8005 {
+	root * 05-compresion-cache/dist
+	import 05-compresion-cache/caddy-optimizado.conf
+}
+
+:8006 {
+	root * 06-bonus-medicion/dist
+	import 06-bonus-medicion/caddy-optimizado.conf
+}

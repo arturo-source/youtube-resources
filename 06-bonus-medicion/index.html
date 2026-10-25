@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>TechStore · 06 Bonus: medir rendimiento</title>
+
+  <!-- ✅ TIP 3: priorizar recursos críticos.
+       preload de la fuente principal: se descubre ya en el HTML,
+       sin esperar a que se descargue y parsee el CSS -->
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- ✅ modulepreload: evita la cascada main.js → products.js → config.js -->
+  <link rel="modulepreload" href="/js/main.js">
+  <link rel="modulepreload" href="/js/config.js">
+  <link rel="modulepreload" href="/js/products.js">
+  <link rel="modulepreload" href="/js/search.js">
+  <link rel="modulepreload" href="/js/lib/lazy.js">
+  <link rel="modulepreload" href="/js/lib/utils.js">
+
+  <!-- ✅ TIP 4: fuera bootstrap.css (280 KB). Solo usábamos .btn, así que
+       esas pocas reglas viven ahora en components.css -->
+  <!-- ✅ Sin @import en cadena: las hojas se descubren y descargan en paralelo -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- ✅ TIP 4: fuera lodash (540 KB). Usábamos 3 funciones que hoy tiene el navegador
+       (o se escriben en 5 líneas): sortBy → toSorted, escape, debounce -->
+  <!-- ✅ Script de terceros NO crítico: ni siquiera async es suficiente, porque al
+       ejecutarse ocupa el hilo principal ~250 ms justo mientras la página carga.
+       Lo pedimos cuando la página ya ha cargado y el navegador está libre. -->
+  <script>
+    addEventListener("load", () => {
+      (window.requestIdleCallback || setTimeout)(() => {
+        const script = document.createElement("script");
+        script.src = "/js/analytics.js";
+        document.head.append(script);
+      });
+    });
+  </script>
+  <!-- Los módulos ES (type="module") ya se comportan como defer por defecto -->
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <!-- ✅ TIP 4: sprite SVG inline. Antes eran 8 ficheros .svg = 8 peticiones.
+       Ahora van en el propio HTML y se reutilizan con <use href="#i-nombre">. -->
+  <svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7H6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  </svg>
+  <header class="site-header">
+    <a class="logo" href="/">Tech<span>Store</span></a>
+    <label class="search">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="search" type="search" placeholder="Buscar productos…">
+    </label>
+    <nav class="actions">
+      <a href="#" aria-label="Favoritos"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></a>
+      <a href="#" aria-label="Cuenta"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></a>
+      <a href="#" aria-label="Carrito"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span id="cart-count">0</span></a>
+      <a href="#" aria-label="Menú" class="menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></a>
+    </nav>
+  </header>
+
+  <p class="promo" id="promo"></p>
+
+  <section class="hero">
+    <!-- ✅ TIP 2: AVIF → WebP → JPG (el navegador elige el primero que soporte)
+         ✅ srcset + sizes: descarga el tamaño adecuado para la pantalla
+         ✅ width/height: el navegador reserva el hueco → sin saltos (CLS)
+         ⚠️ El hero NO lleva loading="lazy": es la imagen LCP, debe cargar cuanto antes
+         ✅ TIP 3: fetchpriority="high" → el navegador la pide antes que otras imágenes -->
+    <picture>
+      <source type="image/avif" sizes="100vw"
+              srcset="/img/hero-800.avif 800w, /img/hero-1280.avif 1280w, /img/hero-1920.avif 1920w">
+      <source type="image/webp" sizes="100vw"
+              srcset="/img/hero-800.webp 800w, /img/hero-1280.webp 1280w, /img/hero-1920.webp 1920w">
+      <img src="/img/hero-1280.jpg" sizes="100vw"
+           srcset="/img/hero-800.jpg 800w, /img/hero-1280.jpg 1280w, /img/hero-1920.jpg 1920w"
+           width="1920" height="1080" fetchpriority="high" alt="Nueva colección de tecnología">
+    </picture>
+    <div class="hero-text">
+      <h1>La tecnología que te hace la vida más fácil</h1>
+      <p>Descubre la nueva colección con envío en 24 horas.</p>
+      <a class="btn btn-primary" href="#products">Ver productos</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="products">
+      <h2>Productos destacados</h2>
+      <div class="grid" id="product-grid"><p class="loading">Cargando productos…</p></div>
+    </section>
+
+    <section id="stats">
+      <h2>Ventas del año</h2>
+      <canvas id="sales-chart" height="120"></canvas>
+    </section>
+
+    <section id="reviews">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <button class="btn btn-outline" id="open-reviews">Ver opiniones</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <button class="chat-bubble" id="chat-bubble" aria-label="Abrir chat">
+    <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+  </button>
+
+  <dialog id="reviews-dialog">
+    <button class="close" data-close aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <h3>Opiniones</h3>
+    <ul id="reviews-list"></ul>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>TechStore · 01 Lazy loading y code splitting</title>
+
+  <!-- ❌ Framework CSS completo (280 KB) aunque solo usamos 3 clases -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <!-- ❌ styles.css hace @import en cadena (fonts.css → components.css) -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- ❌ Siguen bloqueando el render (lo arreglamos en el tip 3) -->
+  <script src="/vendor/lodash.js"></script>
+  <script src="/js/analytics.js"></script>
+
+  <!-- ✅ TIP 1: moment y Chart.js ya NO se cargan aquí. Se piden bajo demanda.
+       ✅ El código de la app está dividido en módulos ES: solo se descarga
+          lo necesario para la carga inicial (main.js + products.js + search.js…) -->
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">Tech<span>Store</span></a>
+    <label class="search">
+      <img src="/icons/search.svg" alt="" class="icon">
+      <input id="search" type="search" placeholder="Buscar productos…">
+    </label>
+    <nav class="actions">
+      <a href="#" aria-label="Favoritos"><img src="/icons/heart.svg" alt="" class="icon"></a>
+      <a href="#" aria-label="Cuenta"><img src="/icons/user.svg" alt="" class="icon"></a>
+      <a href="#" aria-label="Carrito"><img src="/icons/cart.svg" alt="" class="icon"><span id="cart-count">0</span></a>
+      <a href="#" aria-label="Menú" class="menu"><img src="/icons/menu.svg" alt="" class="icon"></a>
+    </nav>
+  </header>
+
+  <!-- ❌ El texto llega más tarde por JS y empuja toda la página hacia abajo (CLS) -->
+  <p class="promo" id="promo"></p>
+
+  <section class="hero">
+    <!-- ❌ JPG de 3840px y ~1,3 MB, sin width/height -->
+    <img src="/img/hero.jpg" alt="Nueva colección de tecnología">
+    <div class="hero-text">
+      <h1>La tecnología que te hace la vida más fácil</h1>
+      <p>Descubre la nueva colección con envío en 24 horas.</p>
+      <a class="btn btn-primary" href="#products">Ver productos</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="products">
+      <h2>Productos destacados</h2>
+      <!-- ❌ El grid empieza vacío y crece al llegar los productos: empuja lo de abajo (CLS) -->
+      <div class="grid" id="product-grid"><p class="loading">Cargando productos…</p></div>
+    </section>
+
+    <section id="stats">
+      <h2>Ventas del año</h2>
+      <canvas id="sales-chart" height="120"></canvas>
+    </section>
+
+    <section id="reviews">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <button class="btn btn-outline-primary" id="open-reviews">Ver opiniones</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <button class="chat-bubble" id="chat-bubble" aria-label="Abrir chat">
+    <img src="/icons/chat.svg" alt="" class="icon">
+  </button>
+
+  <dialog id="reviews-dialog">
+    <button class="close" data-close aria-label="Cerrar"><img src="/icons/close.svg" alt="" class="icon"></button>
+    <h3>Opiniones</h3>
+    <ul id="reviews-list"></ul>
+  </dialog>
+</body>
+</html>

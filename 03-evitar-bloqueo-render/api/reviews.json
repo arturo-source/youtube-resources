@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "author": "Lucía",
+    "rating": 3,
+    "productId": 1,
+    "date": "2026-01-01T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 1."
+  },
+  {
+    "id": 2,
+    "author": "Marcos",
+    "rating": 4,
+    "productId": 2,
+    "date": "2026-06-04T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 2."
+  },
+  {
+    "id": 3,
+    "author": "Sara",
+    "rating": 5,
+    "productId": 3,
+    "date": "2026-01-07T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 3."
+  },
+  {
+    "id": 4,
+    "author": "Diego",
+    "rating": 3,
+    "productId": 4,
+    "date": "2026-06-10T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 4."
+  },
+  {
+    "id": 5,
+    "author": "Elena",
+    "rating": 4,
+    "productId": 5,
+    "date": "2026-01-13T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 5."
+  },
+  {
+    "id": 6,
+    "author": "Pablo",
+    "rating": 5,
+    "productId": 6,
+    "date": "2026-06-16T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 6."
+  },
+  {
+    "id": 7,
+    "author": "Carmen",
+    "rating": 3,
+    "productId": 7,
+    "date": "2026-01-19T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 7."
+  },
+  {
+    "id": 8,
+    "author": "Javier",
+    "rating": 4,
+    "productId": 8,
+    "date": "2026-06-22T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 8."
+  },
+  {
+    "id": 9,
+    "author": "Nerea",
+    "rating": 5,
+    "productId": 9,
+    "date": "2026-01-25T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 9."
+  },
+  {
+    "id": 10,
+    "author": "Álvaro",
+    "rating": 3,
+    "productId": 10,
+    "date": "2026-06-01T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 10."
+  },
+  {
+    "id": 11,
+    "author": "Lucía",
+    "rating": 4,
+    "productId": 11,
+    "date": "2026-01-04T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 11."
+  },
+  {
+    "id": 12,
+    "author": "Marcos",
+    "rating": 5,
+    "productId": 12,
+    "date": "2026-06-07T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 12."
+  },
+  {
+    "id": 13,
+    "author": "Sara",
+    "rating": 3,
+    "productId": 1,
+    "date": "2026-01-10T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 13."
+  },
+  {
+    "id": 14,
+    "author": "Diego",
+    "rating": 4,
+    "productId": 2,
+    "date": "2026-06-13T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 14."
+  },
+  {
+    "id": 15,
+    "author": "Elena",
+    "rating": 5,
+    "productId": 3,
+    "date": "2026-01-16T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 15."
+  },
+  {
+    "id": 16,
+    "author": "Pablo",
+    "rating": 3,
+    "productId": 4,
+    "date": "2026-06-19T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 16."
+  },
+  {
+    "id": 17,
+    "author": "Carmen",
+    "rating": 4,
+    "productId": 5,
+    "date": "2026-01-22T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 17."
+  },
+  {
+    "id": 18,
+    "author": "Javier",
+    "rating": 5,
+    "productId": 6,
+    "date": "2026-06-25T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 18."
+  },
+  {
+    "id": 19,
+    "author": "Nerea",
+    "rating": 3,
+    "productId": 7,
+    "date": "2026-01-01T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 19."
+  },
+  {
+    "id": 20,
+    "author": "Álvaro",
+    "rating": 4,
+    "productId": 8,
+    "date": "2026-06-04T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 20."
+  },
+  {
+    "id": 21,
+    "author": "Lucía",
+    "rating": 5,
+    "productId": 9,
+    "date": "2026-01-07T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 21."
+  },
+  {
+    "id": 22,
+    "author": "Marcos",
+    "rating": 3,
+    "productId": 10,
+    "date": "2026-06-10T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 22."
+  },
+  {
+    "id": 23,
+    "author": "Sara",
+    "rating": 4,
+    "productId": 11,
+    "date": "2026-01-13T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 23."
+  },
+  {
+    "id": 24,
+    "author": "Diego",
+    "rating": 5,
+    "productId": 12,
+    "date": "2026-06-16T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 24."
+  },
+  {
+    "id": 25,
+    "author": "Elena",
+    "rating": 3,
+    "productId": 1,
+    "date": "2026-01-19T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 25."
+  },
+  {
+    "id": 26,
+    "author": "Pablo",
+    "rating": 4,
+    "productId": 2,
+    "date": "2026-06-22T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 26."
+  },
+  {
+    "id": 27,
+    "author": "Carmen",
+    "rating": 5,
+    "productId": 3,
+    "date": "2026-01-25T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 27."
+  },
+  {
+    "id": 28,
+    "author": "Javier",
+    "rating": 3,
+    "productId": 4,
+    "date": "2026-06-01T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 28."
+  },
+  {
+    "id": 29,
+    "author": "Nerea",
+    "rating": 4,
+    "productId": 5,
+    "date": "2026-01-04T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 29."
+  },
+  {
+    "id": 30,
+    "author": "Álvaro",
+    "rating": 5,
+    "productId": 6,
+    "date": "2026-06-07T00:00:00.000Z",
+    "text": "Muy buen producto, llegó rápido y funciona como se esperaba. Opinión número 30."
+  }
+]

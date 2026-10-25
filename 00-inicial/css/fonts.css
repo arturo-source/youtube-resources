@@ -1,0 +1,7 @@
+/* ❌ 5 pesos de fuente en .woff (más pesado que .woff2)
+   ❌ font-display: block → texto invisible hasta que carga la fuente (FOIT) */
+@font-face { font-family: "Inter"; font-weight: 400; font-display: block; src: url("/fonts/inter-latin-400-normal.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: block; src: url("/fonts/inter-latin-500-normal.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: block; src: url("/fonts/inter-latin-600-normal.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 700; font-display: block; src: url("/fonts/inter-latin-700-normal.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 800; font-display: block; src: url("/fonts/inter-latin-800-normal.woff") format("woff"); }

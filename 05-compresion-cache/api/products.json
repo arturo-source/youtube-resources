@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Auriculares Pulse",
+    "category": "Audio",
+    "price": 29.99,
+    "rating": 3.6,
+    "image": "/img/products/p1",
+    "description": "Descripción breve de Auriculares Pulse. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 2,
+    "name": "Teclado Mecánico K8",
+    "category": "Periféricos",
+    "price": 66.99,
+    "rating": 4.3,
+    "image": "/img/products/p2",
+    "description": "Descripción breve de Teclado Mecánico K8. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 3,
+    "name": "Ratón Orbit Pro",
+    "category": "Periféricos",
+    "price": 103.99,
+    "rating": 3.6,
+    "image": "/img/products/p3",
+    "description": "Descripción breve de Ratón Orbit Pro. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 4,
+    "name": "Monitor Vista 27\"",
+    "category": "Pantallas",
+    "price": 140.99,
+    "rating": 4.3,
+    "image": "/img/products/p4",
+    "description": "Descripción breve de Monitor Vista 27\". Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 5,
+    "name": "Webcam ClearView 4K",
+    "category": "Vídeo",
+    "price": 177.99,
+    "rating": 3.6,
+    "image": "/img/products/p5",
+    "description": "Descripción breve de Webcam ClearView 4K. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 6,
+    "name": "Altavoz Nova Mini",
+    "category": "Audio",
+    "price": 214.99,
+    "rating": 4.3,
+    "image": "/img/products/p6",
+    "description": "Descripción breve de Altavoz Nova Mini. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 7,
+    "name": "Smartwatch Fit X",
+    "category": "Wearables",
+    "price": 31.99,
+    "rating": 3.6,
+    "image": "/img/products/p7",
+    "description": "Descripción breve de Smartwatch Fit X. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 8,
+    "name": "Tablet Slate 11",
+    "category": "Tablets",
+    "price": 68.99,
+    "rating": 4.3,
+    "image": "/img/products/p8",
+    "description": "Descripción breve de Tablet Slate 11. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 9,
+    "name": "Portátil Air 14",
+    "category": "Portátiles",
+    "price": 105.99,
+    "rating": 3.6,
+    "image": "/img/products/p9",
+    "description": "Descripción breve de Portátil Air 14. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 10,
+    "name": "Micrófono Studio USB",
+    "category": "Audio",
+    "price": 142.99,
+    "rating": 4.3,
+    "image": "/img/products/p10",
+    "description": "Descripción breve de Micrófono Studio USB. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 11,
+    "name": "Hub USB-C 8 en 1",
+    "category": "Accesorios",
+    "price": 179.99,
+    "rating": 3.6,
+    "image": "/img/products/p11",
+    "description": "Descripción breve de Hub USB-C 8 en 1. Calidad premium, envío en 24h y 2 años de garantía."
+  },
+  {
+    "id": 12,
+    "name": "Lámpara de escritorio Halo",
+    "category": "Accesorios",
+    "price": 216.99,
+    "rating": 4.3,
+    "image": "/img/products/p12",
+    "description": "Descripción breve de Lámpara de escritorio Halo. Calidad premium, envío en 24h y 2 años de garantía."
+  }
+]
